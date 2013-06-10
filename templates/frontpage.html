@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liquid Menu</title>
+  </head>
+  <body>
+
+    <div>
+      <center>
+        {% for menu in all_menus %}
+          <a href="/menu/{{menu.id}}/">
+            {{menu}}
+          </a>
+        {% endfor %}
+      </center>
+    </div>
+
+    <div class="footer">
+      <p>&copy; WaveNDAlal 2013</p>
+    </div>
+  </body>
+</html>

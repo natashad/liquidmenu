@@ -13,7 +13,7 @@ class MenuItem(models.Model):
 	order_id = models.CharField(max_length=10)
 	name = models.CharField(max_length=500)
 	price = models.DecimalField(max_digits=5, decimal_places=2)
-	category = models.CharField(max_length=200)
+	category = models.CharField(max_length=200, default="")
 	likes = models.IntegerField(default=0)
 	dislikes = models.IntegerField(default=0)
 	menu = models.ForeignKey(Menu)

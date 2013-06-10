@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liquid Menu</title>
+    {% load staticfiles %}
+    <link href="{% static 'menus/style.css' %}" rel="stylesheet" />
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+
+  </head>
+  <body>
+
+    <div>
+      <table id="menutable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+      {% for menuitem in menu_items_in_menu %}
+          <tr>
+            <td>{{menuitem.order_id}}</td>
+            <td>{{menuitem.name}}</td>
+            <td>{{menuitem.price}}</td>
+          </tr>
+      {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>&copy; WaveNDAlal 2013</p>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+ 
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+ 
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $('#menutable').dataTable( {
+            "iDisplayLength" : 100
+          }
+
+	);
+      });
+    </script>
+  </body>
+</html>
